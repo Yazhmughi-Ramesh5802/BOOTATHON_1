@@ -7,13 +7,14 @@ import java.awt.event.ActionEvent;
 import java.util.regex.*;
 import javax.swing.*;
 import resetpass.pass;
+import mail.mailsend;
 
 public class forgot extends Frame{
     Label l1, l2;
-    int otp, pin;
+    int pin;
     TextField t1, t2;
     Button b1, b2;
-    String username, str;
+    String username, str, otp;
     public forgot()
     {
         l1 = new Label("Email");
@@ -42,8 +43,16 @@ public class forgot extends Frame{
                     JOptionPane.showMessageDialog(null, "Invalid Username");
                     t1.setText("");
                 }
-                otp = (int)(Math.random()*(9999-1000+1) + 1000);
-                System.out.println(otp);
+                otp = Integer.toString((int)(Math.random()*(9999-1000+1) + 1000));
+                boolean s = mailsend.mail(username, otp);
+                if(s)
+                {
+                    JOptionPane.showMessageDialog(null, "OTP Sent Successfully!!!");
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Please click the Generate OTP to Resend");
+                }
             }
         });
         t2.addTextListener(new TextListener()
@@ -62,7 +71,7 @@ public class forgot extends Frame{
                 {
                     pin = Integer.parseInt(str);
                 }
-                if(otp != pin)
+                if(Integer.parseInt(otp) != pin)
                 {
                     JOptionPane.showMessageDialog(null, "Invalid OTP");
                 }

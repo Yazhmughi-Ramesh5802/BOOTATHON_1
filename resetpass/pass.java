@@ -60,11 +60,12 @@ public class pass extends Frame
                 if(password.equals(repassword))
                 {
                     System.out.print(password +" " + repassword);
-                    JOptionPane.showConfirmDialog(null, "SUCCESS");
+                    JOptionPane.showMessageDialog(null, "SUCCESS!");
                     dispose();
                 }
                 else
                 {
+                    JOptionPane.showMessageDialog(null, "Password Mismatch");
                     t1.setText("");
                     t2.setText("");
                 }
