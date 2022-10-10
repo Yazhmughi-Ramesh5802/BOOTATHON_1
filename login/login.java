@@ -80,6 +80,7 @@ public class login extends Frame
         t2.setBounds(600, 250, 200, 30);
         b1.setBounds(600, 300, 100, 25);
         b2.setBounds(600, 400, 100, 25);
+        
         add(l1); add(l2); add(t1); add(t2); add(b1); add(b2);
         setSize(1280, 720);
         setBackground(Color.white);
