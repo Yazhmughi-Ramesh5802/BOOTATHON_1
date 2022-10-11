@@ -2,12 +2,16 @@ package login;
 import java.awt.*;
 import java.awt.event.TextEvent;
 import java.awt.event.TextListener;
+import java.math.BigInteger;
+import java.security.MessageDigest;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.*;
 
+
 import forgot.forgot;
 import mainpage.mainpage;
+import sqlconnect.sql;
 
 public class login extends JFrame
 {
@@ -51,7 +55,7 @@ public class login extends JFrame
                 try
                 {
                 Boolean flag = true;
-                String regex1 = "[a-zA-z]{5,20}";
+                String regex1 = "[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
                 if(!username.matches(regex1))
                 {
                     flag = false;
@@ -65,10 +69,15 @@ public class login extends JFrame
                 }
                 t1.setText("");
                 t2.setText("");
-                if(flag)
+                password = hash(password);
+                if(flag && sql.checklogin(username, password))
                 {
                     dispose();
                     mainpage.main(null);
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "User Doesn't exists!!");
                 }
                 }
                 catch(Exception t)
@@ -98,7 +107,27 @@ public class login extends JFrame
         setResizable(true);
         setVisible(true);
     }
+    public static String hash(String pass)
+    {
+        try
+        {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] messagediggest = md.digest(pass.getBytes());
+            BigInteger no = new BigInteger(1, messagediggest);
+            String hashtext = no.toString(16);
+            while(hashtext.length() > 32)
+            {
+                hashtext = "0" + hashtext;
+            }
+            return hashtext;
+        }catch(Exception r)
+        {
+            return " ";
+        }
+    }
     public static void main(String[] args) {
         new login();
     }
+    //Username : Test1@skcet.ac.in Password: Geeks10^2001
+    //Usernaem : Admin@skcet.ac.in Password: Admin@123
 }

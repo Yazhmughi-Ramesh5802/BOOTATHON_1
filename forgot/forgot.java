@@ -40,7 +40,7 @@ public class forgot extends JFrame{
         {
             public void actionPerformed(ActionEvent e)
             {
-                Pattern p = Pattern.compile("[a-z0-9]*@.[a-z]*.*[a-z]*");
+                Pattern p = Pattern.compile("[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
                 Matcher m = p.matcher(username);
                 boolean s = false;
                 if(!m.matches())
@@ -85,7 +85,7 @@ public class forgot extends JFrame{
                 else
                 {
                     dispose();
-                    pass.main(null);
+                    new pass(username);
                 }
             }
         });

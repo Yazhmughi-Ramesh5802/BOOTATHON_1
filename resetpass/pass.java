@@ -9,6 +9,8 @@ import javax.swing.JOptionPane;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import forgot.forgot;
+import login.login;
+import sqlconnect.sql;
 
 public class pass extends JFrame
 {
@@ -16,7 +18,7 @@ public class pass extends JFrame
     TextField t1, t2;
     Button b1, b2;
     String password, repassword;
-    pass()
+    public pass(String username)
     {
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,8 +55,8 @@ public class pass extends JFrame
                 }
                 if(password.equals(repassword))
                 {
-                    System.out.print(password +" " + repassword);
                     JOptionPane.showMessageDialog(null, "SUCCESS!");
+                    sql.updatepass(username, login.hash(password));
                     dispose();
                 }
                 else
@@ -88,8 +90,5 @@ public class pass extends JFrame
         setBackground(Color.white);
         setResizable(true);
         setVisible(true);
-    }
-    public static void main(String[] args) {
-        new pass();
     }
 }
