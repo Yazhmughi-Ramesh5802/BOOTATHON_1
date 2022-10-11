@@ -10,7 +10,7 @@ public class mailsend {
     public static boolean mail(String email, String otp)
     {
         String to = email;
-        String from = "aristovince75@gmail.com";
+        String from = "gmail";
         String host = "smtp.gmail.com";
         Properties properties = System.getProperties();
         properties.put("mail.smtp.host", host);
@@ -19,7 +19,7 @@ public class mailsend {
         properties.put("mail.smtp.auth", "true");
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("aristovince75@gmail.com", "jlbavqikwslfdiep");
+                return new PasswordAuthentication("gmail", "password");
             }
         });
         try {
