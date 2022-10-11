@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.util.regex.*;
 import javax.swing.*;
 import forgot.forgot;
+import mainpage.mainpage;
 
 public class login extends Frame
 {
@@ -62,7 +63,8 @@ public class login extends Frame
                 t2.setText("");
                 if(flag)
                 {
-                    System.exit(0);
+                    dispose();
+                    mainpage.main(null);
                 }
             }
         });
