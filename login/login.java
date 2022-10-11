@@ -48,6 +48,8 @@ public class login extends JFrame
         {
             public void actionPerformed(ActionEvent e)
             {
+                try
+                {
                 Boolean flag = true;
                 String regex1 = "[a-zA-z]{5,20}";
                 if(!username.matches(regex1))
@@ -67,6 +69,11 @@ public class login extends JFrame
                 {
                     dispose();
                     mainpage.main(null);
+                }
+                }
+                catch(Exception t)
+                {
+                    JOptionPane.showMessageDialog(null, "Invalid Input");
                 }
             }
         });
