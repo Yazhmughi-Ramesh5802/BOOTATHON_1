@@ -10,7 +10,7 @@ import resetpass.pass;
 import mail.mailsend;
 import login.login;
 
-public class forgot extends Frame{
+public class forgot extends JFrame{
     Label l1, l2;
     int pin;
     TextField t1, t2;
@@ -18,6 +18,7 @@ public class forgot extends Frame{
     String username, str, otp;
     public forgot()
     {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         l1 = new Label("Email");
         l1.setBackground(Color.white);
         t1 = new TextField();

@@ -1,14 +1,17 @@
 package mainpage;
 import java.awt.*;
 import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
 import login.*;
 
-public class mainpage extends Frame{
+public class mainpage extends JFrame{
     Button b1,b2,b3,b4,b5,b6,b7;
     mainpage()
     {
         setLayout(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         b1 = new Button("NEW STUDENT ENTRY");
         b2 = new Button("NEW FACULTY ENTRY");
         b3 = new Button("STUDENT DATABASE VIEWING");

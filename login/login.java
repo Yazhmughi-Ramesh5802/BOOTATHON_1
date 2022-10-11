@@ -9,7 +9,7 @@ import javax.swing.*;
 import forgot.forgot;
 import mainpage.mainpage;
 
-public class login extends Frame
+public class login extends JFrame
 {
     Label l1, l2;
     TextField t1, t2, t3;
@@ -18,6 +18,7 @@ public class login extends Frame
     login()
     {
         setLayout(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         l1 = new Label("UserName");
         l2 = new Label("Password");
         t1 = new TextField();

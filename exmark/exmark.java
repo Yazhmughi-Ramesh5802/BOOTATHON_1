@@ -1,31 +1,29 @@
-package resetpass;
+package exmark;
 
 import java.awt.*;
 import java.awt.event.TextEvent;
 import java.awt.event.TextListener;
-
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import forgot.forgot;
 
-public class pass extends JFrame
+public class exmark extends Frame
 {
-    Label l1, l2;
-    TextField t1, t2;
+    Label l1, l2, l3, l4, l5, l6, l7;
+    TextField t1, t2, t3, t4, t5, t6, t7;
     Button b1, b2;
     String password, repassword;
-    pass()
+    exmark()
     {
         setLayout(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        l1 = new Label("Enter  Password");
-        l2 = new Label("Renter Password");
-        t1 = new TextField();
-        t2 = new TextField();
-        b1 = new Button("Submit");
-        b2 = new Button("Back");
+        l1 = new Label("ROLL NO:");
+        l2 = new Label("ROLL NO:");
+        l3 = new Label("ROLL NO:");
+        l4 = new Label("ROLL NO:");
+        l5 = new Label("ROLL NO:");
+        l6 = new Label("ROLL NO:");
+        l7 = new Label("ROLL NO:");
         t1.addTextListener(new TextListener()
         {
             public void textValueChanged(TextEvent e)
@@ -97,6 +95,6 @@ public class pass extends JFrame
         setVisible(true);
     }
     public static void main(String[] args) {
-        new pass();
+        new exmark();
     }
 }

@@ -2,6 +2,8 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "c:\\Users\\Aristo\\OneDrive\\Desktop\\activation.jar",
-        "c:\\Users\\Aristo\\OneDrive\\Desktop\\mail.jar"
+        "c:\\Users\\Aristo\\OneDrive\\Desktop\\mail.jar",
+        "e:\\activation.jar",
+        "e:\\mail.jar"
     ]
 }
