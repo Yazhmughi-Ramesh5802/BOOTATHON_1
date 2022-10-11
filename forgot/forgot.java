@@ -36,15 +36,19 @@ public class forgot extends JFrame{
         {
             public void actionPerformed(ActionEvent e)
             {
-                Pattern p = Pattern.compile("[a-z0-9]*@.[a-z]*.com");
+                Pattern p = Pattern.compile("[a-z0-9]*@.[a-z]*.*[a-z]*");
                 Matcher m = p.matcher(username);
+                boolean s = false;
                 if(!m.matches())
                 {
                     JOptionPane.showMessageDialog(null, "Invalid Username");
                     t1.setText("");
                 }
-                otp = Integer.toString((int)(Math.random()*(9999-1000+1) + 1000));
-                boolean s = mailsend.mail(username, otp);
+                else
+                {
+                    otp = Integer.toString((int)(Math.random()*(9999-1000+1) + 1000));
+                    s = mailsend.mail(username, otp);
+                }
                 if(s)
                 {
                     JOptionPane.showMessageDialog(null, "OTP Sent Successfully!!!");
@@ -60,7 +64,6 @@ public class forgot extends JFrame{
             public void textValueChanged(TextEvent e)
             {
                 str = t2.getText();
-                System.out.println(str);
             }
         });
         b2.addActionListener(new ActionListener()
