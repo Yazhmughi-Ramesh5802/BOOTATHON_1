@@ -20,10 +20,8 @@ public class forgot extends JFrame{
     {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         l1 = new Label("Email");
-        l1.setBackground(Color.white);
         t1 = new TextField();
         l2 = new Label("OTP");
-        l2.setBackground(Color.white);
         t2 = new TextField();
         b1 = new Button("Generate OTP");
         b2 = new Button("Submit");
@@ -69,7 +67,7 @@ public class forgot extends JFrame{
         {
             public void actionPerformed(ActionEvent e)
             {
-                if(str.matches("[0-9]*"))
+                if(str.matches("[0-9]{4}"))
                 {
                     pin = Integer.parseInt(str);
                 }

@@ -46,22 +46,11 @@ public class pass extends JFrame
         {
             public void actionPerformed(ActionEvent e)
             {
-                /*Pattern p1 = Pattern.compile("[a-zA-z]{5,20}");
-                Matcher m1 = p1.matcher(username);
-                Boolean flag = true;
-                if(!m1.matches())
+                String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8,20}$"; 
+                if(!password.matches(regex))
                 {
-                    flag = false;
-                    JOptionPane.showMessageDialog(null, "Invalid Name");
-                }
-                /*String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8,20}$"; 
-                Pattern p2 = Pattern.compile(regex);
-                Matcher m2= p2.matcher(password);
-                if(!m2.matches())
-                {
-                    flag = false;
                     JOptionPane.showMessageDialog(null, "Invalid Password");
-                }*/
+                }
                 if(password.equals(repassword))
                 {
                     System.out.print(password +" " + repassword);

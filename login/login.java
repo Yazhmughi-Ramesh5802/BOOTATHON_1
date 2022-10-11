@@ -4,7 +4,6 @@ import java.awt.event.TextEvent;
 import java.awt.event.TextListener;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.util.regex.*;
 import javax.swing.*;
 import forgot.forgot;
 import mainpage.mainpage;
@@ -35,7 +34,7 @@ public class login extends JFrame
         {
             public void textValueChanged(TextEvent e)
             {
-                password = t1.getText();
+                password = t2.getText();
             }
         });
         t2.setEchoChar('*');
@@ -44,22 +43,19 @@ public class login extends JFrame
         {
             public void actionPerformed(ActionEvent e)
             {
-                Pattern p1 = Pattern.compile("[a-zA-z]{5,20}");
-                Matcher m1 = p1.matcher(username);
                 Boolean flag = true;
-                if(!m1.matches())
+                String regex1 = "[a-zA-z]{5,20}";
+                if(!username.matches(regex1))
                 {
                     flag = false;
                     JOptionPane.showMessageDialog(null, "Invalid Name");
                 }
-                /*String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8,20}$"; 
-                Pattern p2 = Pattern.compile(regex);
-                Matcher m2= p2.matcher(password);
-                if(!m2.matches())
+                String regex2 = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}";
+                if(!password.matches(regex2))
                 {
                     flag = false;
                     JOptionPane.showMessageDialog(null, "Invalid Password");
-                }*/
+                }
                 t1.setText("");
                 t2.setText("");
                 if(flag)
