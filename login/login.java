@@ -5,6 +5,7 @@ import java.awt.event.TextListener;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.*;
+
 import forgot.forgot;
 import mainpage.mainpage;
 
@@ -23,6 +24,8 @@ public class login extends JFrame
         t1 = new TextField();
         t2 = new TextField();
         b1 = new Button("Forgot Password");
+        b1.setBackground(Color.black);
+        b1.setForeground(Color.white);
         t1.addTextListener(new TextListener()
         {
             public void textValueChanged(TextEvent e)
@@ -39,6 +42,8 @@ public class login extends JFrame
         });
         t2.setEchoChar('*');
         b2 = new Button("Login");
+        b2.setBackground(Color.black);
+        b2.setForeground(Color.white);
         b2.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e)

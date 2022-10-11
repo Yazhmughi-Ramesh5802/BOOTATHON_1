@@ -73,12 +73,16 @@ public class pass extends JFrame
                 forgot.start();
             }
         });
+        b1.setBackground(Color.black);
+        b1.setForeground(Color.white);
+        b2.setBackground(Color.black);
+        b2.setForeground(Color.white);
         l1.setBounds(400, 200, 200, 30);
         l2.setBounds(400, 250, 200, 30);
         t1.setBounds(600, 200, 200, 30);
         t2.setBounds(600, 250, 200, 30);
         b1.setBounds(600, 300, 100, 25);
-        b2.setBounds(600, 450, 100, 30);
+        b2.setBounds(600, 600, 100, 30);
         add(l1); add(l2); add(t1); add(t2); add(b1); add(b2);
         setSize(1280, 720);
         setBackground(Color.white);

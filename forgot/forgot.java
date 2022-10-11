@@ -18,6 +18,7 @@ public class forgot extends JFrame{
     String username, str, otp;
     public forgot()
     {
+        setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         l1 = new Label("Email");
         t1 = new TextField();
@@ -25,6 +26,9 @@ public class forgot extends JFrame{
         t2 = new TextField();
         b1 = new Button("Generate OTP");
         b2 = new Button("Submit");
+        b3 = new Button("Back");
+        b3.setBackground(Color.black);
+        b3.setForeground(Color.white);
         t1.addTextListener(new TextListener()
         {
             public void textValueChanged(TextEvent e)
@@ -85,7 +89,6 @@ public class forgot extends JFrame{
                 }
             }
         });
-        b3 = new Button("Back");
         b3.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e)
@@ -94,13 +97,17 @@ public class forgot extends JFrame{
                 login.main(null);
             }
         });
+        b1.setBackground(Color.black);
+        b1.setForeground(Color.white);
+        b2.setBackground(Color.black);
+        b2.setForeground(Color.white);
         l1.setBounds(400, 200, 200, 30);
         l2.setBounds(400, 250, 200, 30);
         t1.setBounds(600, 200, 200, 30);
         t2.setBounds(600, 250, 200, 30);
         b1.setBounds(600, 300, 100, 25);
         b2.setBounds(600, 400, 100, 25);
-        b3.setBounds(600, 500, 100, 30);
+        b3.setBounds(600, 600, 100, 30);
         add(l1); add(l2); add(t1); add(t2); add(b1); add(b2); add(b3);
         setSize(1280, 720);
         setBackground(Color.MAGENTA);

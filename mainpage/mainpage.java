@@ -74,6 +74,20 @@ public class mainpage extends JFrame{
                 login.main(null);
             }
         });
+        b1.setBackground(Color.black);
+        b1.setForeground(Color.white);
+        b2.setBackground(Color.black);
+        b2.setForeground(Color.white);
+        b3.setBackground(Color.black);
+        b3.setForeground(Color.white);
+        b4.setBackground(Color.black);
+        b4.setForeground(Color.white);
+        b5.setBackground(Color.black);
+        b5.setForeground(Color.white);
+        b6.setBackground(Color.black);
+        b6.setForeground(Color.white);
+        b7.setBackground(Color.black);
+        b7.setForeground(Color.white);
         b1.setBounds(500, 200, 200, 30);        
         b2.setBounds(500, 250, 200, 30);        
         b3.setBounds(500, 300, 200, 30);        
