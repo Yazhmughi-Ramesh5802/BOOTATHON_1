@@ -1,10 +1,10 @@
-package mainpage;
+package jdbc;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
-import login.*;
+//import login.*;
 
 public class mainpage extends JFrame{
     Button b1,b2,b3,b4,b5,b6,b7;
@@ -23,14 +23,14 @@ public class mainpage extends JFrame{
         {
             public void actionPerformed(ActionEvent e)
             {
-                dispose();
+            	new newStudentDetails();
             }
         });
         b2.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e)
             {
-                dispose();
+                new newFacultyDetails();
                 
             }
         });
@@ -38,7 +38,7 @@ public class mainpage extends JFrame{
         {
             public void actionPerformed(ActionEvent e)
             {
-                dispose();
+                new STUDENT();
                 
             }
         });
@@ -46,7 +46,7 @@ public class mainpage extends JFrame{
         {
             public void actionPerformed(ActionEvent e)
             {
-                dispose();
+                new FACULTY();
                 
             }
         });
@@ -54,7 +54,7 @@ public class mainpage extends JFrame{
         {
             public void actionPerformed(ActionEvent e)
             {
-                dispose();
+                new MARKS();
                 
             }
         });
@@ -62,7 +62,7 @@ public class mainpage extends JFrame{
         {
             public void actionPerformed(ActionEvent e)
             {
-                dispose();
+            	new MARKS_VIEW();
                 
             }
         });
